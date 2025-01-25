@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Tool;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ToolController extends Controller
 {
@@ -12,7 +13,10 @@ class ToolController extends Controller
      */
     public function index()
     {
-        //
+        $tools = Tool::orderBy('id', 'desc')->get();
+        return view('admin.tools.index', [
+            'tools' => $tools
+        ]);
     }
 
     /**
@@ -20,7 +24,7 @@ class ToolController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.tools.create');
     }
 
     /**
@@ -28,7 +32,28 @@ class ToolController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required|string|max:100',
+            'logo' => 'required|image|mimes:png|max:2048',
+            'tagline' => 'required|string|max:100',
+        ]);
+
+        DB::beginTransaction();
+
+        try{
+            if($request->hasFile('logo')) {
+                $path = $request->file('logo')->store('tools', 'public');
+                $validated['logo'] =$path;
+            }
+            $newTool = Tool::create($validated);
+
+            DB::commit();
+            return redirect()->route('admin.tools.index')->with('success', 'Tool created succesfully');
+        } catch(\Exception $err){
+            DB::rollBack();
+            
+            return redirect()->back()->with('error', 'System error!'.$err->getMessage());
+        }
     }
 
     /**
