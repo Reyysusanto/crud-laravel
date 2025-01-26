@@ -69,7 +69,9 @@ class ToolController extends Controller
      */
     public function edit(Tool $tool)
     {
-        //
+        return view('admin.tools.edit', [
+            'tool' => $tool
+        ]);
     }
 
     /**
@@ -77,7 +79,30 @@ class ToolController extends Controller
      */
     public function update(Request $request, Tool $tool)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required|string|max:100',
+            'logo' => 'sometimes|image|mimes:png|max:2048',
+            'tagline' => 'required|string|max:100',
+        ]);
+
+        DB::beginTransaction();
+
+        try{
+            if($request->hasFile('logo')) {
+                $path = $request->file('logo')->store('tools', 'public');
+                $validated['logo'] =$path;
+            }
+
+            $tool->update($validated);
+
+            DB::commit();
+
+            return redirect()->route('admin.tools.index')->with('success', 'Tool updated succesfully');
+        } catch(\Exception $err){
+            DB::rollBack();
+            
+            return redirect()->back()->with('error', 'System error!'.$err->getMessage());
+        }
     }
 
     /**
