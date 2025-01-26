@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Project;
 use App\Models\ProjectTools;
+use App\Models\Tool;
 use Illuminate\Http\Request;
 
 class ProjectToolsController extends Controller
@@ -18,9 +20,13 @@ class ProjectToolsController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Project $project)
     {
-        //
+        $tool = Tool::orderBy('id', 'desc')->get();
+        return view('admin.project_tools.create', [
+            'tools' => $tool,
+            'project' => $project
+        ]);
     }
 
     /**

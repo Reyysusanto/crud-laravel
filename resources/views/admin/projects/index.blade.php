@@ -28,7 +28,7 @@
                                 </div>
                             </div>
                             <div class="flex flex-row items-center gap-x-2 mt-4 sm:mt-0">
-                                <a href="#" class="py-3 px-5 rounded-full bg-indigo-950 text-white">Add Tools</a>
+                                <a href="{{ route('admin.project_tools.create', $project) }}" class="py-3 px-5 rounded-full bg-indigo-950 text-white">Add Tools</a>
                                 <a href="#" class="py-3 px-5 rounded-full bg-indigo-950 text-white">Add Screenshots</a>
                             </div>
                             <div class="flex flex-row items-center gap-x-2 mt-4 sm:mt-0">
