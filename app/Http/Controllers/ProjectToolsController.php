@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Project;
 use App\Models\ProjectTools;
 use App\Models\Tool;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class ProjectToolsController extends Controller
@@ -32,9 +33,27 @@ class ProjectToolsController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, Project $project)
     {
-        //
+        $validated = $request->validate([
+            'tool_id' => 'required|integer',
+        ]);
+
+        DB::beginTransaction();
+
+        try{
+            
+            $validated['project_id'] = $project->id;
+            $assignTool = ProjectTools::create($validated);
+
+            DB::commit();
+            return redirect()->back()->with('success', 'Tools assigned succesfully');
+
+        } catch(\Exception $err){
+            DB::rollBack();
+            
+            return redirect()->back()->with('error', 'System error!'.$err->getMessage());
+        }
     }
 
     /**

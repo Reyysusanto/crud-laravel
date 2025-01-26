@@ -19,7 +19,7 @@
                     </div>
                 @endif
 
-                <form action="{{ route('admin.project_tools.store', $project) }}" enctype="multipart/form-data" method="POST">
+                <form action="{{ route('admin.project.assign.tool.store', $project) }}" enctype="multipart/form-data" method="POST">
                     @csrf
                     <div class="flex flex-col gap-y-6">
                         <h1 class="text-3xl text-indigo-950 font-bold mb-6">Assign tool</h1>

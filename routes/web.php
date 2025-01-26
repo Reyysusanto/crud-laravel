@@ -23,7 +23,12 @@ Route::middleware('auth')->group(function () {
     Route::prefix('admin')->name('admin.')->group(function() {
         Route::resource('projects', ProjectController::class);
         Route::resource('tools', ToolController::class);
-        Route::resource('project_tools', ProjectToolsController::class);
+        Route::get('/tools/assign/{project}', [
+            ProjectToolsController::class, 'create'
+        ])->name('project.assign.tool');
+        Route::post('/tools/assign/saved/{project}', [
+            ProjectToolsController::class, 'store'
+        ])->name('project.assign.tool.store');
     });
 });
 
