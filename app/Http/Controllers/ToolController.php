@@ -110,6 +110,13 @@ class ToolController extends Controller
      */
     public function destroy(Tool $tool)
     {
-        //
+        try{
+            $tool->delete();
+            return redirect()->back()->with('success', 'Tool deleted succesfully');
+        } catch(\Exception $err){
+            DB::rollBack();
+
+            return redirect()->back()->with('error', 'System error!'.$err->getMessage());
+        }
     }
 }
