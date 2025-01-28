@@ -44,7 +44,7 @@ class ProjectToolsController extends Controller
         try{
             
             $validated['project_id'] = $project->id;
-            $assignTool = ProjectTools::create($validated);
+            $assignTool = ProjectTools::updateOrCreate($validated);
 
             DB::commit();
             return redirect()->back()->with('success', 'Tools assigned succesfully');
@@ -83,8 +83,33 @@ class ProjectToolsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(ProjectTools $projectTools)
+    public function destroy($id)
     {
-        //
+        // $projectTool = ProjectTools::find($id);
+
+        // if (!$projectTool) {
+        //     return redirect()->back()->with('error', 'Project Tool not found.');
+        // }
+    
+        // try {
+        //     $projectTool->delete();
+        //     return redirect()->back()->with('Success', 'Project tool deleted successfully');
+        // } catch (\Exception $err) {
+        //     return redirect()->back()->with('error', 'System error! ' . $err->getMessage());
+        // }
+        try{
+            $pivot = DB::table('project_tools')->where('id', $id)->first();
+
+            if ($pivot) {
+                DB::table('project_tools')->where('id', $id)->delete();
+                return redirect()->back()->with('success', 'Tool deleted succesfully.');
+            }
+
+            return redirect()->back()->with('error', 'Tool not found.');
+        } catch(\Exception $err){
+            DB::rollBack();
+            
+            return redirect()->back()->with('error', 'System error!'.$err->getMessage());
+        }
     }
 }

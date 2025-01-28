@@ -75,8 +75,9 @@
                                     </p>
                                 </div>
                             </div>
+                            {{ $tool->pivot->id }}
                             <div class="flex flex-row items-center gap-x-2 mt-4 sm:mt-0">
-                                <form action="{{ route('admin.tools.destroy', $tool) }}" method="POST">
+                                <form action="{{ route('admin.project_tools.destroy', $tool->pivot->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="py-3 px-5 rounded-full bg-red-500 text-white">Delete</button>
