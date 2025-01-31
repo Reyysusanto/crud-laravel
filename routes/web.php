@@ -3,6 +3,7 @@
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\ProjectScreenshotController;
 use App\Http\Controllers\ProjectToolsController;
 use App\Http\Controllers\ToolController;
 use Illuminate\Support\Facades\Route;
@@ -33,7 +34,15 @@ Route::middleware('auth')->group(function () {
         ])->name('project.assign.tool.store');
         Route::delete('project_tools/{id}', [
             ProjectToolsController::class, 'destroy'
-        ])->name('project_tools.destroy');
+            ])->name('project_tools.destroy');
+            
+        Route::resource('project_screenshot', ProjectScreenshotController::class);
+        Route::get('/screenshot/{project}', [
+            ProjectScreenshotController::class, 'create'
+        ])->name('project_screenshots.create');
+        Route::post('/screenshot/saved/{project}', [
+            ProjectScreenshotController::class, 'store'
+        ])->name('project_screenshots.store');
     });
 });
 
