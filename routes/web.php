@@ -36,13 +36,16 @@ Route::middleware('auth')->group(function () {
             ProjectToolsController::class, 'destroy'
             ])->name('project_tools.destroy');
             
-        Route::resource('project_screenshot', ProjectScreenshotController::class);
-        Route::get('/screenshot/{project}', [
-            ProjectScreenshotController::class, 'create'
-        ])->name('project_screenshots.create');
-        Route::post('/screenshot/saved/{project}', [
-            ProjectScreenshotController::class, 'store'
-        ])->name('project_screenshots.store');
+            Route::resource('project_screenshot', ProjectScreenshotController::class);
+            Route::get('/screenshot/{project}', [
+                ProjectScreenshotController::class, 'create'
+                ])->name('project_screenshots.create');
+            Route::post('/screenshot/saved/{project}', [
+                ProjectScreenshotController::class, 'store'
+                ])->name('project_screenshots.store');
+            Route::delete('screenshot/{projectScreenshot}', [
+                ProjectScreenshotController::class, 'destroy'
+                ])->name('project_screenshots.destroy');
     });
 });
 

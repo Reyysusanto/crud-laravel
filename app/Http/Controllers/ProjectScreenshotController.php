@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Project;
-use App\Models\ProjectScreenshot;
 use Illuminate\Http\Request;
+use App\Models\ProjectScreenshot;
+use Illuminate\Support\Facades\DB;
 
 class ProjectScreenshotController extends Controller
 {
@@ -29,9 +30,29 @@ class ProjectScreenshotController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, Project $project)
     {
-        //
+        $validated = $request->validate([
+            'screenshot' => 'required|image|mimes:png|max:2048'
+        ]);
+
+        DB::beginTransaction();
+
+        try{
+            if($request->hasFile('screenshot')) {
+                $path = $request->file('screenshot')->store('project_screenshot', 'public');
+                $validated['screenshot'] =$path;
+            }
+            $validated['project_id'] = $project->id;
+            $newScreenshot = ProjectScreenshot::create($validated);
+
+            DB::commit();
+            return redirect()->route('admin.project_screenshots.create')->with('success', 'Screenshot added succesfully');
+        } catch(\Exception $err){
+            DB::rollBack();
+            
+            return redirect()->back()->with('error', 'System error!'.$err->getMessage());
+        }
     }
 
     /**
@@ -63,6 +84,15 @@ class ProjectScreenshotController extends Controller
      */
     public function destroy(ProjectScreenshot $projectScreenshot)
     {
-        //
+        try{
+            $projectScreenshot->delete();
+            DB::commit();
+            
+            return redirect()->back()->with('success', 'Screenshot deleted successfully');
+        } catch(\Exception $err){
+            DB::rollBack();
+
+            return redirect()->back()->with('error', 'System error!'.$err->getMessage());
+        }
     }
 }

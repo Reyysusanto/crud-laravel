@@ -75,7 +75,7 @@
                                     </p>
                                 </div>
                             </div>
-                            {{ $tool->pivot->id }}
+
                             <div class="flex flex-row items-center gap-x-2 mt-4 sm:mt-0">
                                 <form action="{{ route('admin.project_tools.destroy', $tool->pivot->id) }}" method="POST">
                                     @csrf
