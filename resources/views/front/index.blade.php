@@ -3,7 +3,7 @@
 @section('content')
     <section id="Header" class="flex flex-col gap-[100px] bg-portto-black relative">
         <nav class="container max-w-[1130px] mx-auto flex justify-between items-center pt-[30px] z-10">
-            <a href="index.html" class="w-[161px] flex shrink-0 h-fit w-fit">
+            <a href="index.html" class="flex shrink-0 h-fit w-fit">
                 <img src="{{asset('images/logos/logo.svg')}}" alt="logo">
             </a>
             <div class="flex gap-[50px] items-center">
@@ -29,7 +29,7 @@
         </nav>
         <div class="hero container max-w-[1130px] mx-auto flex justify-between items-center relative">
             <div class="flex flex-col gap-[50px] h-fit w-fit text-white z-10">
-                <p class="font-semibold text-2xl">I’m Shayna 👋</p>
+                <p class="font-semibold text-2xl">I’m Reyy 👋</p>
                 <h1 class="font-extrabold text-[80px] leading-[90px]">Professional Designer & Dev</h1>
                 <button class="font-bold text-[26px] leading-[39px] rounded-[30px] p-[30px_40px] bg-portto-purple w-fit transition-all duration-300 hover:shadow-[0_10px_20px_0_#4920E5]">Explore Now</button>
             </div>
