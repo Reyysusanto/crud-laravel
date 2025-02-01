@@ -136,7 +136,7 @@
 </section>
 
 <section id="Book"  class="container max-w-[1130px] mx-auto">
-    <div class="bg-portto-black flex justify-between px-[50px] rounded-[50px] h-[476px] mt-[100px] bg-[url('{{asset('images/Ellipse.svg')}}')] bg-center bg-no-repeat bg-contain bg-[length:400px_400px] relative">
+    <div class="bg-portto-black flex justify-between px-[50px] rounded-[50px] h-[476px] mt-[100px] bg-[url('{{asset('images/Ellipse.svg')}}')] bg-center bg-no-repeat bg-contain relative">
         <div class="group/projects w-[220px] overflow-hidden">    
             <div class="slider flex flex-col h-max justify-center">
                 <div class="project-container animate-[slideToT_30s_linear_infinite] group-hover/projects:pause-animate flex flex-col gap-[30px] pt-[30px] justify-center">
@@ -180,7 +180,7 @@
         <div class="flex flex-col gap-5 items-center justify-center text-center w-fit">
             <h2 class="font-extrabold text-[40px] leading-[60px] text-white">Let Me Help You <br>Grow Business Today</h2>
             <p class="font-semibold text-lg leading-[32px] text-white">I will dedicate my entire career to focus <br>on finishing your future dreams</p>
-            <a href="book.html" class="bg-portto-light-gold font-bold text-lg p-[14px_30px] rounded-full transition-all duration-300 hover:shadow-[0_10px_20px_0_#FFE7C280]">Book a Meeting</a>
+            <a href="{{ route('front.book') }}" class="bg-portto-light-gold font-bold text-lg p-[14px_30px] rounded-full transition-all duration-300 hover:shadow-[0_10px_20px_0_#FFE7C280]">Book a Meeting</a>
         </div>
         <div class="group/projects w-[220px] overflow-hidden">    
             <div class="slider flex flex-col h-max justify-center">
