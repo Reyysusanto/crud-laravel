@@ -9,7 +9,7 @@ use App\Http\Controllers\ToolController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [FrontController::class, 'index'])->name('front.index');
-Route::get('/details', [FrontController::class, 'details'])->name('front.detail');
+Route::get('/details/{project:slug}', [FrontController::class, 'details'])->name('front.detail');
 Route::get('/book', [FrontController::class, 'book'])->name('front.book');
 
 Route::get('/dashboard', function () {
