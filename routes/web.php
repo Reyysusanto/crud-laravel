@@ -3,6 +3,7 @@
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\ProjectOrderController;
 use App\Http\Controllers\ProjectScreenshotController;
 use App\Http\Controllers\ProjectToolsController;
 use App\Http\Controllers\ToolController;
@@ -25,6 +26,7 @@ Route::middleware('auth')->group(function () {
     Route::prefix('admin')->name('admin.')->group(function() {
         Route::resource('projects', ProjectController::class);
         Route::resource('tools', ToolController::class);
+        Route::resource('project_orders', ProjectOrderController::class);
         // Route::resource('project_tools', ProjectToolsController::class);
 
         Route::get('/tools/assign/{project}', [
@@ -37,16 +39,16 @@ Route::middleware('auth')->group(function () {
             ProjectToolsController::class, 'destroy'
             ])->name('project_tools.destroy');
             
-            Route::resource('project_screenshot', ProjectScreenshotController::class);
-            Route::get('/screenshot/{project}', [
-                ProjectScreenshotController::class, 'create'
-                ])->name('project_screenshots.create');
-            Route::post('/screenshot/saved/{project}', [
-                ProjectScreenshotController::class, 'store'
-                ])->name('project_screenshots.store');
-            Route::delete('screenshot/{projectScreenshot}', [
-                ProjectScreenshotController::class, 'destroy'
-                ])->name('project_screenshots.destroy');
+        Route::resource('project_screenshot', ProjectScreenshotController::class);
+        Route::get('/screenshot/{project}', [
+            ProjectScreenshotController::class, 'create'
+            ])->name('project_screenshots.create');
+        Route::post('/screenshot/saved/{project}', [
+            ProjectScreenshotController::class, 'store'
+            ])->name('project_screenshots.store');
+        Route::delete('screenshot/{projectScreenshot}', [
+            ProjectScreenshotController::class, 'destroy'
+            ])->name('project_screenshots.destroy');
     });
 });
 
