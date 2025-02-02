@@ -39,6 +39,9 @@ class ProjectOrderController extends Controller
      */
     public function show(ProjectOrder $projectOrder)
     {
+        return view('admin.project_orders.show', [
+            'projectOrder' => $projectOrder
+        ]);
         //
     }
 

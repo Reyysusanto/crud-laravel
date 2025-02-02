@@ -8,9 +8,9 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 sm:p-8 lg:p-12">
-                <a href="{{ route('admin.projects.create')}}" class="py-4 px-10 text-white bg-indigo-950 rounded-full font-bold mb-6 inline-block">
+                <h1 class="py-4 px-10 text-white bg-indigo-950 rounded-full font-bold mb-6 inline-block">
                     Project Order
-                </a>
+                </h1>
                 <hr class="my-6">
                 <div class="flex flex-col gap-y-5">
 
