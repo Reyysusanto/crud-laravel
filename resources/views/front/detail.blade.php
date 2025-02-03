@@ -3,49 +3,49 @@
 @section('content')
 
 <section id="Header" class="flex flex-col gap-[100px] bg-portto-black relative max-h-[665px] mb-[493px]">
-    <nav class="container max-w-[1130px] mx-auto flex justify-between items-center pt-[30px] z-10">
+    <nav class="container max-w-[1130px] mx-auto flex justify-between items-center pt-[30px] z-10 flex-wrap">
         <a href="index.html" class="flex shrink-0 h-fit w-fit">
             <img src="{{asset('images/logos/logo.svg')}}" alt="logo">
         </a>
-        <div class="flex gap-[50px] items-center">
-            <ul class="flex gap-[50px] items-center text-white">
-                <li>
-                    <a href="index.html"  class="font-medium text-lg hover:text-portto-light-gold transition-all duration-300">Home</a>
-                </li>
-                <li>
-                    <a href=""  class="font-medium text-lg hover:text-portto-light-gold transition-all duration-300">Services</a>
-                </li>
-                <li>
-                    <a href=""  class="font-medium text-lg hover:text-portto-light-gold transition-all duration-300">Testimonials</a>
-                </li>
-                <li>
-                    <a href=""  class="font-medium text-lg hover:text-portto-light-gold transition-all duration-300">Pricing</a>
-                </li>
-                <li>
-                    <a href=""  class="font-medium text-lg hover:text-portto-light-gold transition-all duration-300">About</a>
-                </li>
+        <div class="flex gap-[50px] items-center w-full justify-between md:w-auto">
+            <ul class="flex gap-[50px] items-center text-white text-lg font-medium flex-wrap justify-center md:flex-nowrap">
+                <li><a href="index.html" class="hover:text-portto-light-gold transition-all duration-300">Home</a></li>
+                <li><a href="" class="hover:text-portto-light-gold transition-all duration-300">Services</a></li>
+                <li><a href="" class="hover:text-portto-light-gold transition-all duration-300">Testimonials</a></li>
+                <li><a href="" class="hover:text-portto-light-gold transition-all duration-300">Pricing</a></li>
+                <li><a href="" class="hover:text-portto-light-gold transition-all duration-300">About</a></li>
             </ul>
             <button class="bg-portto-light-gold font-bold text-lg p-[14px_30px] rounded-full transition-all duration-300 hover:shadow-[0_10px_20px_0_#FFE7C280]">Hire Me</button>
         </div>
     </nav>
-    <div class="hero container max-w-[1130px] mx-auto flex flex-col justify-center items-center relative">
-        <h1 class="font-extrabold text-[50px] leading-[70px] text-white text-center z-10">{{ $project->name }}</h1>
-        <p class="text-xl leading-[30px] text-white z-10">{{ $project->category }}</p>
-        <div class="flex shrink-0 w-full h-[800px] rounded-[50px] overflow-hidden bg-white mt-[70px] z-10">
+
+    <div class="hero container max-w-[1130px] mx-auto flex flex-col justify-center items-center relative px-6 md:px-0">
+        <h1 class="font-extrabold text-[30px] md:text-[50px] leading-[40px] md:leading-[70px] text-white text-center z-10">
+            {{ $project->name }}
+        </h1>
+        <p class="text-xl leading-[30px] text-white z-10">
+            {{ $project->category }}
+        </p>
+        
+        <!-- Image Container -->
+        <div class="flex shrink-0 w-full h-[400px] md:h-[800px] rounded-[30px] overflow-hidden bg-white mt-[40px] md:mt-[70px] z-10">
             <img src="{{ Storage::url($project->cover) }}" class="w-full h-full object-cover" alt="thumbnail">
         </div>
-        <img src="{{asset('images/Ellipse.svg')}}" class="absolute transform -translate-x-1/2 -translate-y-1/2 left-1/2 top-[135px] w-[35%]" alt="background icon">
+        
+        <!-- Background Icon -->
+        <img src="{{asset('images/Ellipse.svg')}}" class="absolute transform -translate-x-1/2 -translate-y-1/2 left-1/2 top-[135px] w-[35%] md:w-[20%]" alt="background icon">
     </div>
 </section>
 
-<section id="Details" class="container max-w-[1130px] mx-auto pt-[50px]">
-    <div class="flex gap-[50px] justify-between">
-        <div class="flex flex-col gap-5">
+<section id="Details" class="container max-w-[1130px] mx-auto pt-[50px] px-6 md:px-0">
+    <div class="flex flex-col md:flex-row gap-[50px] justify-between">
+        <!-- First Purpose Section -->
+        <div class="flex flex-col gap-5 md:w-1/2">
             <h2 class="font-extrabold text-2xl">The First Purpose</h2>
             <div class="description flex flex-col gap-4 font-medium text-lg leading-[38px]">
                 {{ $project->about }}
             </div>
-            <div class="flex gap-4">
+            <div class="flex gap-4 flex-wrap">
                 <div class="flex items-center gap-1 bg-[#F4F5F8] p-[8px_10px] rounded-[12px]">
                     <div class="w-5 h-5 flex shrink-0">
                         <img src="{{asset('images/icons/crown-black.svg')}}" alt="icon">
@@ -66,10 +66,11 @@
                 </div>
             </div>
         </div>
-        <div class="flex flex-col gap-5">
-            <h2 class="font-extrabold text-2xl">Software Used</h2>
-            <div class="software-container flex flex-col shrink-0 gap-5 w-[325px]">
 
+        <!-- Software Used Section -->
+        <div class="flex flex-col gap-5 md:w-1/2">
+            <h2 class="font-extrabold text-2xl">Software Used</h2>
+            <div class="software-container flex flex-col gap-5 w-full">
                 @forelse ($project->tools as $tool)
                     <div class="card-software w-full flex items-center bg-[#F4F5F8] rounded-2xl p-5 gap-4 transition-all duration-300 hover:ring-2 hover:ring-portto-purple">
                         <div class="w-[70px] h-[70px] bg-white rounded-full flex shrink-0 items-center justify-center">
@@ -82,18 +83,16 @@
                     </div>
                 @empty
                     <p>Belum terdapat tools yang diberikan</p>
-                    @endforelse
-                    
-                </div>
+                @endforelse
             </div>
         </div>
-    </section>
-    
-    <section id="Screenshots" class="container max-w-[1130px] mx-auto pt-[50px]">
-        <div class="flex flex-col gap-5">
-            <h2 class="font-extrabold text-2xl">Screenshots</h2>
-            <div class="grid grid-cols-4 gap-5">
-                
+    </div>
+</section>
+
+<section id="Screenshots" class="container max-w-[1130px] mx-auto pt-[50px] px-6 md:px-0">
+    <div class="flex flex-col gap-5">
+        <h2 class="font-extrabold text-2xl">Screenshots</h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5">
             @forelse ($project->screenshots as $screenshot)
                 <a href="{{ Storage::url($screenshot->screenshot) }}" class="group w-full h-[190px] flex overflow-hidden rounded-[30px] ring-1 ring-[#E4E5E8] transition-all duration-300 hover:ring-[3px] hover:ring-portto-purple relative" data-fancybox="gallery" data-caption="Screenshot #1">
                     <img src="{{ Storage::url($screenshot->screenshot) }}" class="w-full h-full object-cover" alt="thumbnail">
@@ -102,7 +101,6 @@
             @empty
                 <p>Belum terdapat screenshot yang ditambahkan</p>
             @endforelse
-
         </div>
     </div>
 </section>
