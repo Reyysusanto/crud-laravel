@@ -24,13 +24,13 @@
                 <a href="" class="font-medium hover:font-semibold hover:text-portto-light-gold transition-all duration-300">My Profile</a>
                 <a href="" class="font-medium hover:font-semibold hover:text-portto-light-gold transition-all duration-300">How do I work</a>
                 <a href="" class="font-medium hover:font-semibold hover:text-portto-light-gold transition-all duration-300">Achievements</a>
-                <a href="" class="font-medium hover:font-semibold hover:text-portto-light-gold transition-all duration-300">Team A</a>
+                <a href="" class="font-medium hover:font-semibold hover:text-portto-light-gold transition-all duration-300">Semicolon Production</a>
             </div>
             <div class="flex flex-col gap-5">
                 <p class="font-bold text-lg">Connect</p>
-                <a href="" class="font-medium hover:font-semibold hover:text-portto-light-gold transition-all duration-300 flex items-center gap-[6px]"><img src="{{asset('images/icons/call.svg')}}" alt="icon">+1 2208 1996</a>
+                <a href="" class="font-medium hover:font-semibold hover:text-portto-light-gold transition-all duration-300 flex items-center gap-[6px]"><img src="{{asset('images/icons/call.svg')}}" alt="icon">+62 812 1783 9696</a>
                 <a href="" class="font-medium hover:font-semibold hover:text-portto-light-gold transition-all duration-300 flex items-center gap-[6px]"><img src="{{asset('images/icons/dribbble.svg')}}" alt="icon">buildwithangga</a>
-                <a href="" class="font-medium hover:font-semibold hover:text-portto-light-gold transition-all duration-300 flex items-center gap-[6px]"><img src="{{asset('images/icons/sms.svg')}}" alt="icon">team@bwa.com</a>
+                <a href="" class="font-medium hover:font-semibold hover:text-portto-light-gold transition-all duration-300 flex items-center gap-[6px]"><img src="{{asset('images/icons/sms.svg')}}" alt="icon">rheinaldysusanto@gmail.com</a>
             </div>
         </div>
     </div>
