@@ -313,100 +313,49 @@
 
     <section id="Testimonials" class="bg-[#F4F5F8]">
         <div class="container max-w-[1130px] mx-auto pt-[180px] pb-[100px]">
-            <h2 class="font-extrabold text-[50px] leading-[70px] text-center">I Have Delivered Success <br>For All My Clients</h2>
+            <h2 class="font-extrabold text-[50px] leading-[70px] text-center">
+                I Have Delivered Success <br>For All My Clients
+            </h2>
             <div class="grid grid-cols-2 gap-[30px] mt-[50px]">
-                <div class="card-testi bg-white rounded-[30px] flex flex-col p-5 gap-5">
-                    <div class="h-[40px] flex shrink-0">
-                        <img src="{{asset('images/logos/logo-testi.svg')}}" alt="logo">
-                    </div>
-                    <p class="font-semibold text-[22px] leading-[40px]">“Her working method were truly different from other freelancers, she has this kind of mindset that can create user-center product and user loved it”</p>
-                    <div class="flex h-8">
-                        <img src="{{asset('images/icons/Star.svg')}}" alt="star">
-                        <img src="{{asset('images/icons/Star.svg')}}" alt="star">
-                        <img src="{{asset('images/icons/Star.svg')}}" alt="star">
-                        <img src="{{asset('images/icons/Star.svg')}}" alt="star">
-                        <img src="{{asset('images/icons/Star.svg')}}" alt="star">
-                    </div>
-                    <div class="flex items-center gap-4">
-                        <div class="w-[70px] h-[70px] shrink-0">
-                            <img src="{{asset('images/photo/photo.png')}}" alt="photo">
-                        </div>
-                        <div class="flex flex-col gap-[2px]">
-                            <p class="font-bold text-xl leading-[30px]">Jessi Lyio</p>
-                            <p class="text-lg text-[#878C9C]">CPO Agolia Modd</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-testi bg-white rounded-[30px] flex flex-col p-5 gap-5">
-                    <div class="h-[40px] flex shrink-0">
-                        <img src="{{asset('images/logos/logo-testi2.svg')}}" alt="logo">
-                    </div>
-                    <p class="font-semibold text-[22px] leading-[40px]">“She helped us to build our first prototype to win our investor and early users heart that generate huge attraction. Will hire her back again anytime soon”</p>
-                    <div class="flex h-8">
-                        <img src="{{asset('images/icons/Star.svg')}}" alt="star">
-                        <img src="{{asset('images/icons/Star.svg')}}" alt="star">
-                        <img src="{{asset('images/icons/Star.svg')}}" alt="star">
-                        <img src="{{asset('images/icons/Star.svg')}}" alt="star">
-                        <img src="{{asset('images/icons/Star.svg')}}" alt="star">
-                    </div>
-                    <div class="flex items-center gap-4">
-                        <div class="w-[70px] h-[70px] shrink-0">
-                            <img src="{{asset('images/photo/photo2.png')}}" alt="photo">
-                        </div>
-                        <div class="flex flex-col gap-[2px]">
-                            <p class="font-bold text-xl leading-[30px]">Mariam Sya</p>
-                            <p class="text-lg text-[#878C9C]">Founder TinderJobs</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-testi bg-white rounded-[30px] flex flex-col p-5 gap-5">
-                    <div class="h-[40px] flex shrink-0">
-                        <img src="{{asset('images/logos/logo-testi3.svg')}}" alt="logo">
-                    </div>
-                    <p class="font-semibold text-[22px] leading-[40px]">“She helped us to build our first prototype to win our investor and early users heart that generate huge attraction. Will hire her back again anytime soon”</p>
-                    <div class="flex h-8">
-                        <img src="{{asset('images/icons/Star.svg')}}" alt="star">
-                        <img src="{{asset('images/icons/Star.svg')}}" alt="star">
-                        <img src="{{asset('images/icons/Star.svg')}}" alt="star">
-                        <img src="{{asset('images/icons/Star.svg')}}" alt="star">
-                        <img src="{{asset('images/icons/Star.svg')}}" alt="star">
-                    </div>
-                    <div class="flex items-center gap-4">
-                        <div class="w-[70px] h-[70px] shrink-0">
-                            <img src="{{asset('images/photo/photo3.png')}}" alt="photo">
-                        </div>
-                        <div class="flex flex-col gap-[2px]">
-                            <p class="font-bold text-xl leading-[30px]">John Ceyna</p>
-                            <p class="text-lg text-[#878C9C]">Investor at Wokiya</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-testi bg-white rounded-[30px] flex flex-col p-5 gap-5">
-                    <div class="h-[40px] flex shrink-0">
-                        <img src="{{asset('images/logos/logo-testi4.svg')}}" alt="logo">
-                    </div>
-                    <p class="font-semibold text-[22px] leading-[40px]">“Her working method were truly different from other freelancers, she has this kind of mindset that can create user-center product and user loved it”</p>
-                    <div class="flex h-8">
-                        <img src="{{asset('images/icons/Star.svg')}}" alt="star">
-                        <img src="{{asset('images/icons/Star.svg')}}" alt="star">
-                        <img src="{{asset('images/icons/Star.svg')}}" alt="star">
-                        <img src="{{asset('images/icons/Star.svg')}}" alt="star">
-                        <img src="{{asset('images/icons/Star.svg')}}" alt="star">
-                    </div>
-                    <div class="flex items-center gap-4">
-                        <div class="w-[70px] h-[70px] shrink-0">
-                            <img src="{{asset('images/photo/photo.png')}}" alt="photo">
-                        </div>
-                        <div class="flex flex-col gap-[2px]">
-                            <p class="font-bold text-xl leading-[30px]">Yein Balli</p>
-                            <p class="text-lg text-[#878C9C]">CMO Waniwani</p>
-                        </div>
-                    </div>
-                </div>
+                <x-testimonial-card 
+                    logo="images/logos/logo-testi.svg"
+                    message="Metode kerjanya benar-benar berbeda dari freelancer lain, ia memiliki pola pikir yang dapat menciptakan produk berpusat pada pengguna dan pengguna sangat menyukainya."
+                    stars="5"
+                    photo="images/photo/photo.png"
+                    name="Jessi Lyio"
+                    role="CPO Agolia Modd"
+                />
+    
+                <x-testimonial-card 
+                    logo="images/logos/logo-testi2.svg"
+                    message="Dia membantu kami membangun prototipe pertama untuk memenangkan hati investor dan pengguna awal, yang menghasilkan daya tarik besar. Akan merekrutnya kembali kapan saja!"
+                    stars="5"
+                    photo="images/photo/photo2.png"
+                    name="Mariam Sya"
+                    role="Founder TinderJobs"
+                />
+    
+                <x-testimonial-card 
+                    logo="images/logos/logo-testi3.svg"
+                    message="Bekerja dengannya sangat luar biasa! Wawasannya membantu kami menyusun strategi produk yang lebih baik dan meningkatkan daya saing di pasar."
+                    stars="5"
+                    photo="images/photo/photo3.png"
+                    name="John Ceyna"
+                    role="Investor at Wokiya"
+                />
+    
+                <x-testimonial-card 
+                    logo="images/logos/logo-testi4.svg"
+                    message="Pendekatan inovatifnya sangat membantu tim kami memahami kebutuhan pelanggan dengan lebih baik. Sangat direkomendasikan!"
+                    stars="5"
+                    photo="images/photo/photo.png"
+                    name="Yein Balli"
+                    role="CMO Waniwani"
+                />
             </div>
         </div>
     </section>
-
+    
     <x-faq />
 
     <x-footer />
