@@ -1,119 +1,75 @@
 @extends('front/layouts/app')
 @section('title', 'Laravel Porto')
 @section('content')
-    <section id="Header" class="flex flex-col gap-[100px] bg-portto-black relative">
-        <nav class="container max-w-[1130px] mx-auto flex justify-between items-center pt-[30px] z-10">
+
+    <section id="Header" class="flex flex-col gap-[50px] md:gap-[100px] bg-portto-black relative">
+        <nav class="container max-w-[1130px] mx-auto flex flex-wrap justify-between items-center pt-[20px] md:pt-[30px] z-10">
             <a href="index.html" class="flex shrink-0 h-fit w-fit">
                 <img src="{{asset('images/logos/logo.svg')}}" alt="logo">
             </a>
-            <div class="flex gap-[50px] items-center">
-                <ul class="flex gap-[50px] items-center text-white">
-                    <li>
-                        <a href="index.html"  class="font-medium text-lg hover:text-portto-light-gold transition-all duration-300">Home</a>
-                    </li>
-                    <li>
-                        <a href=""  class="font-medium text-lg hover:text-portto-light-gold transition-all duration-300">Services</a>
-                    </li>
-                    <li>
-                        <a href=""  class="font-medium text-lg hover:text-portto-light-gold transition-all duration-300">Testimonials</a>
-                    </li>
-                    <li>
-                        <a href=""  class="font-medium text-lg hover:text-portto-light-gold transition-all duration-300">Pricing</a>
-                    </li>
-                    <li>
-                        <a href=""  class="font-medium text-lg hover:text-portto-light-gold transition-all duration-300">About</a>
-                    </li>
+            <div class="hidden lg:flex gap-[30px] md:gap-[50px] items-center">
+                <ul class="flex flex-col lg:flex-row gap-[20px] md:gap-[50px] items-center text-white text-sm md:text-lg">
+                    <li><a href="index.html" class="font-medium hover:text-portto-light-gold transition-all duration-300">Home</a></li>
+                    <li><a href="" class="font-medium hover:text-portto-light-gold transition-all duration-300">Services</a></li>
+                    <li><a href="" class="font-medium hover:text-portto-light-gold transition-all duration-300">Testimonials</a></li>
+                    <li><a href="" class="font-medium hover:text-portto-light-gold transition-all duration-300">Pricing</a></li>
+                    <li><a href="" class="font-medium hover:text-portto-light-gold transition-all duration-300">About</a></li>
                 </ul>
-                <button class="bg-portto-light-gold font-bold text-lg p-[14px_30px] rounded-full transition-all duration-300 hover:shadow-[0_10px_20px_0_#FFE7C280]">Hire Me</button>
+                <button class="bg-portto-light-gold font-bold text-base md:text-lg p-[10px_20px] md:p-[14px_30px] rounded-full transition-all duration-300 hover:shadow-[0_10px_20px_0_#FFE7C280]">Hire Me</button>
             </div>
         </nav>
-        <div class="hero container max-w-[1130px] mx-auto flex justify-between items-center relative">
-            <div class="flex flex-col gap-[50px] h-fit w-fit text-white z-10">
-                <p class="font-semibold text-2xl">I’m Reyy 👋</p>
-                <h1 class="font-extrabold text-[80px] leading-[90px]">Professional Designer & Dev</h1>
-                <button class="font-bold text-[26px] leading-[39px] rounded-[30px] p-[30px_40px] bg-portto-purple w-fit transition-all duration-300 hover:shadow-[0_10px_20px_0_#4920E5]">Explore Now</button>
+
+        <div class="hero container max-w-[1130px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center relative px-4">
+            <div class="flex flex-col gap-[30px] md:gap-[50px] text-white z-10">
+                <p class="font-semibold text-lg md:text-2xl">I’m Reyy 👋</p>
+                <h1 class="font-extrabold text-[40px] md:text-[80px] leading-[50px] md:leading-[90px]">Professional Designer & Dev</h1>
+                <button class="font-bold text-xl md:text-[26px] leading-[30px] md:leading-[39px] rounded-[20px] md:rounded-[30px] p-[20px_30px] md:p-[30px_40px] bg-portto-purple w-fit transition-all duration-300 hover:shadow-[0_10px_20px_0_#4920E5]">Explore Now</button>
             </div>
-            <div class="flex max-w-[471px] max-h-[567px] z-10">
+            <div class="flex max-w-[300px] md:max-w-[471px] max-h-[400px] md:max-h-[567px] mx-auto z-10">
                 <img src="{{asset('images/hero-image.png')}}" class="w-full h-full object-contain" alt="hero image">
             </div>
-            <img src="{{asset('images/Ellipse.svg')}}" class="absolute transform -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2" alt="background icon">
+            <img src="{{asset('images/Ellipse.svg')}}" class="absolute transform -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2 w-[70%] md:w-auto" alt="background icon">
         </div>
-        <div class="company-logos w-full overflow-hidden pb-[190px]">
+
+        <div class="company-logos w-full overflow-hidden pb-[100px] md:pb-[190px]">
             <div class="group/slider flex flex-nowrap w-max items-center">
-                <div class="logo-container animate-[slide_25s_linear_infinite] group-hover/slider:pause-animate  flex gap-[70px] pl-[70px] items-center flex-nowrap">
-                    <div class="flex w-fit h-[40px] shrink-0">
+                <div class="logo-container animate-[slide_25s_linear_infinite] group-hover/slider:pause-animate flex gap-[40px] md:gap-[70px] pl-[40px] md:pl-[70px] items-center">
+                    <div class="flex w-fit h-[30px] md:h-[40px] shrink-0">
                         <img src="{{asset('images/logos/logoipsum1.png')}}" class="w-full h-full object-contain" alt="logo">
                     </div>
-                    <div class="flex w-fit h-[40px] shrink-0">
+                    <div class="flex w-fit h-[30px] md:h-[40px] shrink-0">
                         <img src="{{asset('images/logos/logoipsum2.png')}}" class="w-full h-full object-contain" alt="logo">
                     </div>
-                    <div class="flex w-fit h-[40px] shrink-0">
+                    <div class="flex w-fit h-[30px] md:h-[40px] shrink-0">
                         <img src="{{asset('images/logos/logoipsum3.png')}}" class="w-full h-full object-contain" alt="logo">
                     </div>
-                    <div class="flex w-fit h-[40px] shrink-0">
-                        <img src="{{asset('images/logos/logoipsum4.png')}}" class="w-full h-full object-contain" alt="logo">
-                    </div>
-                    <div class="flex w-fit h-[40px] shrink-0">
-                        <img src="{{asset('images/logos/logoipsum1.png')}}" class="w-full h-full object-contain" alt="logo">
-                    </div>
-                    <div class="flex w-fit h-[40px] shrink-0">
-                        <img src="{{asset('images/logos/logoipsum2.png')}}" class="w-full h-full object-contain" alt="logo">
-                    </div>
-                    <div class="flex w-fit h-[40px] shrink-0">
-                        <img src="{{asset('images/logos/logoipsum3.png')}}" class="w-full h-full object-contain" alt="logo">
-                    </div>
-                    <div class="flex w-fit h-[40px] shrink-0">
-                        <img src="{{asset('images/logos/logoipsum4.png')}}" class="w-full h-full object-contain" alt="logo">
-                    </div>
-                </div>
-                <div class="logo-container animate-[slide_25s_linear_infinite] group-hover/slider:pause-animate  flex gap-[70px] pl-[70px] items-center flex-nowrap ">
-                    <div class="flex w-fit h-[40px] shrink-0">
-                        <img src="{{asset('images/logos/logoipsum1.png')}}" class="w-full h-full object-contain" alt="logo">
-                    </div>
-                    <div class="flex w-fit h-[40px] shrink-0">
-                        <img src="{{asset('images/logos/logoipsum2.png')}}" class="w-full h-full object-contain" alt="logo">
-                    </div>
-                    <div class="flex w-fit h-[40px] shrink-0">
-                        <img src="{{asset('images/logos/logoipsum3.png')}}" class="w-full h-full object-contain" alt="logo">
-                    </div>
-                    <div class="flex w-fit h-[40px] shrink-0">
-                        <img src="{{asset('images/logos/logoipsum4.png')}}" class="w-full h-full object-contain" alt="logo">
-                    </div>
-                    <div class="flex w-fit h-[40px] shrink-0">
-                        <img src="{{asset('images/logos/logoipsum1.png')}}" class="w-full h-full object-contain" alt="logo">
-                    </div>
-                    <div class="flex w-fit h-[40px] shrink-0">
-                        <img src="{{asset('images/logos/logoipsum2.png')}}" class="w-full h-full object-contain" alt="logo">
-                    </div>
-                    <div class="flex w-fit h-[40px] shrink-0">
-                        <img src="{{asset('images/logos/logoipsum3.png')}}" class="w-full h-full object-contain" alt="logo">
-                    </div>
-                    <div class="flex w-fit h-[40px] shrink-0">
+                    <div class="flex w-fit h-[30px] md:h-[40px] shrink-0">
                         <img src="{{asset('images/logos/logoipsum4.png')}}" class="w-full h-full object-contain" alt="logo">
                     </div>
                 </div>
             </div>
         </div>
-        <div class="stats container max-w-[1130px] mx-auto bg-gradient-to-r from-[#FFEDD3] to-[#FFCD83] flex justify-between items-center px-[100px] rounded-[30px] w-full h-[180px] absolute transform -translate-x-1/2 translate-y-1/2 bottom-0 left-1/2">
-            <div class="text-center w-fit h-fit">
-                <p class="font-extrabold text-[40px] leading-[60px]">$230M</p>
-                <p class="font-semibold text-lg">Valuation</p>
+
+        <div class="stats container max-w-[1130px] mx-auto bg-gradient-to-r from-[#FFEDD3] to-[#FFCD83] grid grid-cols-2 md:flex justify-between items-center px-[50px] md:px-[100px] rounded-[30px] w-full h-auto md:h-[180px] absolute transform -translate-x-1/2 translate-y-1/2 bottom-0 left-1/2 gap-5 md:gap-0 py-[30px] md:py-0">
+            <div class="text-center">
+                <p class="font-extrabold text-[30px] md:text-[40px] leading-[40px] md:leading-[60px]">$230M</p>
+                <p class="font-semibold text-base md:text-lg">Valuation</p>
             </div>
-            <div class="text-center w-fit h-fit">
-                <p class="font-extrabold text-[40px] leading-[60px]">31,934</p>
-                <p class="font-semibold text-lg">Projects</p>
+            <div class="text-center">
+                <p class="font-extrabold text-[30px] md:text-[40px] leading-[40px] md:leading-[60px]">31,934</p>
+                <p class="font-semibold text-base md:text-lg">Projects</p>
             </div>
-            <div class="text-center w-fit h-fit">
-                <p class="font-extrabold text-[40px] leading-[60px]">245</p>
-                <p class="font-semibold text-lg">Startups IPO</p>
+            <div class="text-center">
+                <p class="font-extrabold text-[30px] md:text-[40px] leading-[40px] md:leading-[60px]">245</p>
+                <p class="font-semibold text-base md:text-lg">Startups IPO</p>
             </div>
-            <div class="text-center w-fit h-fit">
-                <p class="font-extrabold text-[40px] leading-[60px]">9/10</p>
-                <p class="font-semibold text-lg">Successful</p>
+            <div class="text-center">
+                <p class="font-extrabold text-[30px] md:text-[40px] leading-[40px] md:leading-[60px]">9/10</p>
+                <p class="font-semibold text-base md:text-lg">Successful</p>
             </div>
-            <div class="text-center w-fit h-fit">
-                <p class="font-extrabold text-[40px] leading-[60px]">562</p>
-                <p class="font-semibold text-lg">Companies</p>
+            <div class="text-center col-span-2 md:col-span-1">
+                <p class="font-extrabold text-[30px] md:text-[40px] leading-[40px] md:leading-[60px]">562</p>
+                <p class="font-semibold text-base md:text-lg">Companies</p>
             </div>
         </div>
     </section>
@@ -256,61 +212,58 @@
 
     <section id="Workflow" class="container max-w-[1130px] mx-auto pt-[100px] pb-[200px] relative">
         <div class="flex flex-col gap-[50px] justify-center">
-            <h2 class="font-extrabold text-[50px] leading-[70px] text-center">My Workflow Suitable <br>For Any Project</h2>
-            <div class="flex justify-between items-center">
-                <div class="w-[350px] flex flex-col shrink-0 gap-[30px] items-center">
-                    <div class="flex-none">
-                        <img src="{{asset('images/icons/messages-notif.svg')}}" alt="icon">
-                    </div>
-                    <div class="flex flex-col gap-[10px] text-center">
-                        <p class="font-extrabold text-[22px] leading-[33px]">Research & Validate</p>
-                        <p class="text-lg leading-[34px]">Ensuring all requirements were matching with market conditions</p>
-                    </div>
-                </div>
-                <div class="w-[350px] flex flex-col shrink-0 gap-[30px] items-center">
-                    <div class="flex-none">
-                        <img src="{{asset('images/icons/programming-notif.svg')}}" alt="icon">
-                    </div>
-                    <div class="flex flex-col gap-[10px] text-center">
-                        <p class="font-extrabold text-[22px] leading-[33px]">Building with Teams</p>
-                        <p class="text-lg leading-[34px]">Working with agile framework to product a better results</p>
+            <h2 class="font-extrabold text-3xl md:text-5xl leading-[40px] md:leading-[70px] text-center">
+                My Workflow Suitable <br class="hidden md:block"> For Any Project
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+                <div class="flex flex-col items-center gap-5">
+                    <img src="{{asset('images/icons/messages-notif.svg')}}" alt="icon" class="w-16 md:w-auto">
+                    <div>
+                        <p class="font-extrabold text-xl md:text-2xl leading-[33px]">Research & Validate</p>
+                        <p class="text-lg md:text-xl leading-[34px]">Ensuring all requirements match market conditions.</p>
                     </div>
                 </div>
-                <div class="w-[350px] flex flex-col shrink-0 gap-[30px] items-center">
-                    <div class="flex-none">
-                        <img src="{{asset('images/icons/like-notif.svg')}}" alt="icon">
+                <div class="flex flex-col items-center gap-5">
+                    <img src="{{asset('images/icons/programming-notif.svg')}}" alt="icon" class="w-16 md:w-auto">
+                    <div>
+                        <p class="font-extrabold text-xl md:text-2xl leading-[33px]">Building with Teams</p>
+                        <p class="text-lg md:text-xl leading-[34px]">Working with agile frameworks to produce better results.</p>
                     </div>
-                    <div class="flex flex-col gap-[10px] text-center">
-                        <p class="font-extrabold text-[22px] leading-[33px]">Deliver to Clients</p>
-                        <p class="text-lg leading-[34px]">We bring an instant results to the clients so that they are happys</p>
+                </div>
+                <div class="flex flex-col items-center gap-5">
+                    <img src="{{asset('images/icons/like-notif.svg')}}" alt="icon" class="w-16 md:w-auto">
+                    <div>
+                        <p class="font-extrabold text-xl md:text-2xl leading-[33px]">Deliver to Clients</p>
+                        <p class="text-lg md:text-xl leading-[34px]">Instant results delivered to clients for their satisfaction.</p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="stats container max-w-[1130px] mx-auto bg-gradient-to-r from-[#FFEDD3] to-[#FFCD83] flex justify-between items-center px-[100px] rounded-[30px] w-full h-[180px] absolute transform -translate-x-1/2 translate-y-1/2 bottom-0 left-1/2">
-            <div class="text-center w-fit h-fit">
-                <p class="font-extrabold text-[40px] leading-[60px]">$230M</p>
+    
+        <div class="stats container max-w-[1130px] mx-auto bg-gradient-to-r from-[#FFEDD3] to-[#FFCD83] grid grid-cols-2 md:grid-cols-5 justify-center items-center px-6 md:px-[100px] py-6 md:py-0 rounded-[30px] w-full h-auto md:h-[180px] absolute transform -translate-x-1/2 translate-y-1/2 bottom-0 left-1/2 gap-6">
+            <div>
+                <p class="font-extrabold text-2xl md:text-4xl leading-[40px] md:leading-[60px]">$230M</p>
                 <p class="font-semibold text-lg">Valuation</p>
             </div>
-            <div class="text-center w-fit h-fit">
-                <p class="font-extrabold text-[40px] leading-[60px]">31,934</p>
+            <div>
+                <p class="font-extrabold text-2xl md:text-4xl leading-[40px] md:leading-[60px]">31,934</p>
                 <p class="font-semibold text-lg">Projects</p>
             </div>
-            <div class="text-center w-fit h-fit">
-                <p class="font-extrabold text-[40px] leading-[60px]">245</p>
+            <div>
+                <p class="font-extrabold text-2xl md:text-4xl leading-[40px] md:leading-[60px]">245</p>
                 <p class="font-semibold text-lg">Startups IPO</p>
             </div>
-            <div class="text-center w-fit h-fit">
-                <p class="font-extrabold text-[40px] leading-[60px]">9/10</p>
+            <div>
+                <p class="font-extrabold text-2xl md:text-4xl leading-[40px] md:leading-[60px]">9/10</p>
                 <p class="font-semibold text-lg">Successful</p>
             </div>
-            <div class="text-center w-fit h-fit">
-                <p class="font-extrabold text-[40px] leading-[60px]">562</p>
+            <div>
+                <p class="font-extrabold text-2xl md:text-4xl leading-[40px] md:leading-[60px]">562</p>
                 <p class="font-semibold text-lg">Companies</p>
             </div>
         </div>
     </section>
-
+    
     <section id="Testimonials" class="bg-[#F4F5F8]">
         <div class="container max-w-[1130px] mx-auto pt-[180px] pb-[100px]">
             <h2 class="font-extrabold text-[50px] leading-[70px] text-center">

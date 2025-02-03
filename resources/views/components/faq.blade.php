@@ -1,16 +1,16 @@
 <section id="FAQ" class="container max-w-[1130px] mx-auto">
-    <div class="flex gap-[70px] items-center pt-[100px] pb-[150px]">
-        <div class="flex flex-col gap-[30px]">
-            <div class="w-20 h-20 flex shrink-0 rounded-full bg-portto-purple items-center justify-center">
+    <div class="flex flex-col lg:flex-row gap-[70px] items-center pt-[100px] pb-[150px]">
+        <div class="flex flex-col gap-[30px] text-center lg:text-left">
+            <div class="w-20 h-20 flex shrink-0 rounded-full bg-portto-purple items-center justify-center mx-auto lg:mx-0">
                 <img src="{{asset('images/icons/messages.svg')}}" alt="icon">
             </div>
             <div class="flex flex-col gap-[10px]">
-                <h2 class="font-extrabold text-[50px] leading-[70px]">Frequently Asked Questions</h2>
+                <h2 class="font-extrabold text-[40px] lg:text-[50px] leading-[50px] lg:leading-[70px]">Frequently Asked Questions</h2>
                 <p class="text-lg text-[#878C9C]">If you have any question please contact me.</p>
             </div>
-            <a href="{{ route('front.book') }}" class="bg-portto-black font-bold text-lg text-white rounded-full p-[14px_30px] w-fit transition-all duration-300 hover:bg-white hover:text-portto-black hover:ring hover:ring-portto-black">Contact Me</a>
+            <a href="{{ route('front.book') }}" class="bg-portto-black font-bold text-lg text-white rounded-full p-[14px_30px] w-fit mx-auto lg:mx-0 transition-all duration-300 hover:bg-white hover:text-portto-black hover:ring hover:ring-portto-black">Contact Me</a>
         </div>
-        <div class="flex flex-col gap-[30px] w-[603px] shrink-0">
+        <div class="flex flex-col gap-[30px] w-full lg:w-[603px] shrink-0">
             <div class="flex flex-col p-5 rounded-2xl bg-[#F4F5F8] w-full">
                 <button class="accordion-button flex justify-between gap-1 items-center" data-accordion="accordion-faq-1">
                     <span class="font-bold text-2xl">How do I work usually?</span>
